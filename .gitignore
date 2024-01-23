@@ -1,0 +1,31 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+
+# Distribution / packaging
+bin/
+build/
+package/
+*.zip
+
+# venv
+venv
+.venv
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# macos
+.DS_Store
+
+# env variables
+.env
+
+# Data directory
+dataset/
+images/
+images-yolo/
+
+# Training directory
+runs/
