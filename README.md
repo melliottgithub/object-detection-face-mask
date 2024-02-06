@@ -1,35 +1,25 @@
-# Image Recognition/Detection for Face Mask
+# Face Mask Detection
 
-Image Recognition/Detection project for classifying/detection of people facek with and without medical mask.
+## Introduction
 
-## Classes
+A cloud-based machine learning implementation, where the client-side (web browser) sends image data to the server-side (AWS infrastructure) to perform object detection and returns the results back to the client. This architecture allows for scalability, as AWS Lambda can handle many requests, and Amazon Rekognition provides the machine learning capabilities without the need for managing the underlying infrastructure.
 
-- **medical-mask (MM)**: Depicts one medical mask without any person, with or without a background.
-- **person-mask (PM)**: Represents one individual with one medical mask, either not wearing the mask or wearing it inappropriately.
-- **person-masked-medical (PMM)**: Illustrates one person correctly wearing a medical mask.
-- **person-masked-non-medical (PMN)**: Displays one person wearing a non-medical mask.
+![](overview.png)
 
-## Create virtual env and install libraries
-```bash
-python3.11 -m venv .venv
-pip install -r requirements.txt
-```
+## Machine Learning Model
 
-## Image Annotation
+The machine learning model for object detection process, including gathering and processing data, annotating images, augmenting the dataset, and training two types of models: a recognition model and a YOLO v8 model.
 
-The labelImg utility is used to create bounding box annotations after image preprocessing. The annotations are created in the PascalVOC format and later converted as needed for each model.
+See [Machine Learning Model](./model/README.md) for details.
 
-### Install labelImg
-The `labelImg`  is not currently being updated, and some runtime errors arise with recent Python versions. To overcome this issue, a conda environment is created as follows:
+## Web Application
 
-```bash
-conda create --name label-img  python=3.9
-conda activate label-img
-pip install pyqt5==5.15.2 lxml labelImg
-```
+The web application is a Single Page Application (SPA) created with the React library. It allows the user to upload an image and see the results of the object detection process.
 
-> The file `class_names.txt` is created by the preprocessing Notebook.
+See [Front-end](./front-end/README.md) for details.
 
-## Amazon Recognition
+## Service
 
-See [rekognition](./rekognition)
+This service receives requests from the web app, which includes the detection tasks. The image data is received as a base64 encoded string to the Lambda function.
+
+See [Lambda](./lambda/README.md) for details.

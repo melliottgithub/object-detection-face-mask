@@ -1,0 +1,12 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "rekognition:DetectCustomLabels"
+      ],
+      "Resource": "arn:aws:rekognition:us-east-1:<account-id>:project/face-mask/version/<version>/*"
+    }
+  ]
+}

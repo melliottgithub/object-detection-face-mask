@@ -1,0 +1,11 @@
+path: <full-path>/images-yolo # dataset root dir
+train: train # train images (relative to 'path')
+val: test # val images (relative to 'path')
+test:  # test images (optional)
+
+# Classes
+names:
+  0: medical-mask
+  1: person-mask
+  2: person-masked-medical
+  3: person-masked-non-medical
