@@ -1,4 +1,4 @@
-## Amazon Recognition
+## Amazon Rekognition
 
 ### Create a new project or identify an existing one
 
